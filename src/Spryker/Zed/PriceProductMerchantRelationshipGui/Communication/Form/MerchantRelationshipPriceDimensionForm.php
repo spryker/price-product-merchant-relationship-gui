@@ -51,11 +51,6 @@ class MerchantRelationshipPriceDimensionForm extends AbstractType
         $this->addMerchantRelationshipCollectionField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -88,9 +83,6 @@ class MerchantRelationshipPriceDimensionForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return string
-     */
     protected function getTemplatePath(): string
     {
         return static::TEMPLATE_PATH;

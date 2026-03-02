@@ -29,9 +29,6 @@ class MerchantRelationshipPriceDimensionFormDataProvider
      */
     protected $merchantRelationshipFacade;
 
-    /**
-     * @param \Spryker\Zed\PriceProductMerchantRelationshipGui\Dependency\Facade\PriceProductMerchantRelationshipGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade
-     */
     public function __construct(PriceProductMerchantRelationshipGuiToMerchantRelationshipFacadeInterface $merchantRelationshipFacade)
     {
         $this->merchantRelationshipFacade = $merchantRelationshipFacade;
