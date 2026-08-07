@@ -73,7 +73,8 @@ class MerchantRelationshipPriceDimensionFormDataProvider
 
         do {
             $merchantRelationshipCriteriaTransfer = (new MerchantRelationshipCriteriaTransfer())
-                ->setPagination($paginationTransfer);
+                ->setPagination($paginationTransfer)
+                ->setWithExpanderPlugins(false);
 
             /** @var \Generated\Shared\Transfer\MerchantRelationshipCollectionTransfer $merchantRelationshipCollectionTransfer */
             $merchantRelationshipCollectionTransfer = $this->merchantRelationshipFacade
