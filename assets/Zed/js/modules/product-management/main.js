@@ -72,20 +72,20 @@ $(document).ready(function () {
     }
 
     function removeParam(key, sourceURL) {
-        let rtn = sourceURL.split('?')[0],
-            param,
-            params_arr = [],
-            queryString = sourceURL.indexOf('?') !== -1 ? sourceURL.split('?')[1] : '';
+        let rtn = sourceURL.split('?')[0];
+        let param;
+        let paramsArray = [];
+        let queryString = sourceURL.indexOf('?') !== -1 ? sourceURL.split('?')[1] : '';
 
         if (queryString !== '') {
-            params_arr = queryString.split('&');
-            for (let i = params_arr.length - 1; i >= 0; i -= 1) {
-                param = params_arr[i].split('=')[0];
+            paramsArray = queryString.split('&');
+            for (let i = paramsArray.length - 1; i >= 0; i -= 1) {
+                param = paramsArray[i].split('=')[0];
                 if (param === key) {
-                    params_arr.splice(i, 1);
+                    paramsArray.splice(i, 1);
                 }
             }
-            rtn = rtn + '?' + params_arr.join('&');
+            rtn = rtn + '?' + paramsArray.join('&');
         }
         return rtn;
     }
@@ -102,7 +102,7 @@ $(document).ready(function () {
 
     function getUrlVars() {
         let vars = {};
-        let parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+        window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
             vars[key] = value;
         });
 
