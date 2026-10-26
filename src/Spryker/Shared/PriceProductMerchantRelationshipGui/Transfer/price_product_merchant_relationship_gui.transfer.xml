@@ -26,6 +26,7 @@
 
     <transfer name="MerchantRelationshipCriteria">
         <property name="pagination" type="Pagination"/>
+        <property name="withExpanderPlugins" type="bool" strict="true"/>
     </transfer>
 
     <transfer name="MerchantRelationshipCollection">
