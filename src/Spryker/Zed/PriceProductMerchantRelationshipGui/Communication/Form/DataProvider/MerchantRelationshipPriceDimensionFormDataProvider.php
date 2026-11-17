@@ -86,7 +86,8 @@ class MerchantRelationshipPriceDimensionFormDataProvider
             );
 
             $paginationTransfer->setPage($paginationTransfer->getPage() + 1);
-        } while ($merchantRelationshipCollectionTransfer->getPaginationOrFail()->getNbResultsOrFail() > count($merchantRelationshipTransfers));
+            $hasNextBatch = $merchantRelationshipCollectionTransfer->getPaginationOrFail()->getNbResultsOrFail() > count($merchantRelationshipTransfers);
+        } while ($hasNextBatch);
 
         return $merchantRelationshipTransfers;
     }
